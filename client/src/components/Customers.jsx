@@ -22,7 +22,10 @@ export default function Customers() {
   const [deleteCustomerId, setDeleteCustomerId] = useState()
   const [customerToEdit, setCustomerToEdit] = useState()
 
-  const handleAddCustomerModal = ()=>setAddCustomerModal(!addCustomerModal)
+  const handleAddCustomerModal = () => {
+    setAddCustomerModal(!addCustomerModal)
+    
+  }
   const handleEditCustomerModal = (customer) => {
     setCustomerToEdit(customer)
     setEditCustomerModal(!editCustomerModal)
