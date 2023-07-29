@@ -1,0 +1,12 @@
+.customers {
+  padding: 5px 20px;
+}
+.customers-count{
+  display: flex;
+  justify-content:right;
+  padding: 10px
+}
+.loader{
+  margin: 10%;
+  text-align: center;
+}
