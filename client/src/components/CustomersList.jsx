@@ -1,5 +1,7 @@
 import React from 'react'
 import { IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import Pagination from './Pagination';
 
 const tableHeadCells = ["ID", "Name", "Email", "Contact", "Status", "Date added", "", ""]
@@ -27,8 +29,8 @@ export default function CustomersList({listLoader, customers, customersCount, li
                 {customers?.length ? (
                     customers.map((customer) => {
                       const {_id, customerId, name, email, contact, status, created_at } = customer
-                      const deleteButton = <IconButton onClick={()=>handleConfirmDeleteModal(_id)}><i className="fa fa-trash"></i></IconButton>
-                      const editButton = <IconButton onClick={()=>handleEditCustomerModal(customer)}><i className="fa fa-edit"></i></IconButton>
+                      const deleteButton = <IconButton onClick={()=>handleConfirmDeleteModal(_id)}><DeleteIcon /></IconButton>
+                      const editButton = <IconButton onClick={()=>handleEditCustomerModal(customer)}><EditIcon/> </IconButton>
 
                       return(
                       <TableRow key={_id}>
