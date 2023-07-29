@@ -72,7 +72,7 @@ export default function EditCustomer({ open, handleClose, fetchCustomers, custom
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="transition-modal-title" variant="h5" component="h2" sx={{padding:'5px'}}> Add customer </Typography>
+        <Typography id="transition-modal-title" variant="h5" component="h2" sx={{padding:'5px'}}> Edit customer </Typography>
        <CustomerForm handleClose={handleClose} handleSubmit={handleSubmit} customer={customer} handleChange={handleChange} error={formError} />
       </Box>
     </Modal>
