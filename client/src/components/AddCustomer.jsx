@@ -41,6 +41,14 @@ export default function AddCustomer({ open, handleClose,fetchCustomers }) {
       setFormError(false)
   }
 
+  const clearState = () => {
+    setEmail('')
+    setContact('')
+    setStatus('')
+    setName('')
+    
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -49,6 +57,7 @@ export default function AddCustomer({ open, handleClose,fetchCustomers }) {
       if (response.status === 200) {
         setFormError(false)
         handleClose()
+        clearState()
         fetchCustomers()
       } else {
         setFormError(response?.message)
@@ -65,7 +74,7 @@ export default function AddCustomer({ open, handleClose,fetchCustomers }) {
     >
       <Box sx={style}>
         <Typography id="transition-modal-title" variant="h5" component="h2" sx={{padding:'5px'}}> Add customer </Typography>
-        <CustomerForm handleClose={handleClose} handleSubmit={handleSubmit} customer={{name, email, status}} handleChange={handleChange} error={formError} />
+        <CustomerForm handleClose={handleClose} handleSubmit={handleSubmit} customer={{name, email, status}} handleChange={handleChange} error={formError} clearState={clearState} />
       </Box>
     </Modal>
   )

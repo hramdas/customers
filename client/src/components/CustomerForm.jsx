@@ -1,7 +1,7 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import React from 'react'
 
-export default function CustomerForm({handleClose, handleSubmit, customer, handleChange, error}) {
+export default function CustomerForm({handleClose, handleSubmit, customer, handleChange, error, clearState}) {
   return (
     <form onSubmit={handleSubmit}>
           <div style={{display:'grid', gap:'20px'}}>
@@ -45,7 +45,10 @@ export default function CustomerForm({handleClose, handleSubmit, customer, handl
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <div style={{display: 'flex', gap:'10px', marginTop:'40px'}}>
               <Button type="submit" variant="contained">Save</Button>
-              <Button onClick={handleClose} color="secondary"  variant="contained">Cancel</Button>
+          <Button onClick={() => {
+            handleClose()
+            clearState()
+          }} color="secondary" variant="contained">Cancel</Button>
             </div>
           </div>
         </form>
